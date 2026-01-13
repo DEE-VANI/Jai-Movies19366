@@ -16,9 +16,13 @@ export interface Database {
           type: 'movie' | 'series'
           poster_url: string | null
           reaction_text: string
+          short_review: string | null
           date_watched: string
           tags: string[] | null
+          genres: string[] | null
           slug: string
+          featured: boolean
+          image_urls: string[] | null
           user_id: string | null
           created_at: string
           updated_at: string
@@ -29,9 +33,13 @@ export interface Database {
           type: 'movie' | 'series'
           poster_url?: string | null
           reaction_text: string
+          short_review?: string | null
           date_watched: string
           tags?: string[] | null
+          genres?: string[] | null
           slug: string
+          featured?: boolean
+          image_urls?: string[] | null
           user_id?: string | null
           created_at?: string
           updated_at?: string
@@ -42,9 +50,39 @@ export interface Database {
           type?: 'movie' | 'series'
           poster_url?: string | null
           reaction_text?: string
+          short_review?: string | null
           date_watched?: string
           tags?: string[] | null
+          genres?: string[] | null
           slug?: string
+          featured?: boolean
+          image_urls?: string[] | null
+          user_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+      }
+      ratings: {
+        Row: {
+          id: string
+          reaction_id: string
+          rating: number
+          user_id: string | null
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: string
+          reaction_id: string
+          rating: number
+          user_id?: string | null
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: string
+          reaction_id?: string
+          rating?: number
           user_id?: string | null
           created_at?: string
           updated_at?: string
